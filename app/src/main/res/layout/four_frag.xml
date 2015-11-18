@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/onboarding_3_800x480" >
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvFragThirds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textSize="26dp"
+        android:text="TextView" />
+
+
+    <TextView
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="$ iW"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="#ffffff"
+        android:id="@+id/textView"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tvFragFirst"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:text="spend it wisely"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/icon_tour_4"
+        android:layout_below="@+id/imageView9"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp" />
+
+    <TextView
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Link Accounts"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/textView4"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:visibility="gone"
+        android:lineSpacingExtra="2dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Link other accounts and get personalised
+notifications. Ex. ‘’You lost $40 today. You
+could`ve bought the Creativity INC. book"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        android:id="@+id/textView4"
+
+        android:layout_above="@+id/button"
+        android:layout_toRightOf="@+id/tvFragThirds"
+        android:layout_toEndOf="@+id/tvFragThirds"
+        android:layout_marginBottom="44dp" />
+
+    <Button
+        android:background="#089797"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="GET STARTED"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:visibility="gone"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/tour_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView9"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

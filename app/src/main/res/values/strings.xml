@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Spend it Wisely</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Rs">\u20B9</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_hourly_rate">HourlyRateActivity</string>
+    <string name="hourly_rate">Your Hourly Rate</string>
+    <string name="in_order">In order for the app to work, please share with us your hourly rate.</string>
+    <string name="title_activity_dash_board">DashBoardActivity</string>
+
+</resources>
