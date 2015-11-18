@@ -55,6 +55,7 @@ public class DashBoardActivity extends Activity {
 
         Typeface face1= Typeface.createFromAsset(getAssets(), "PTC75F.ttf");
 
+        System.out.println("============================change===");
 
         TextView textview1 = (TextView) findViewById(R.id.textview1);
 
