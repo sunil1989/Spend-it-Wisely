@@ -12,13 +12,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.spend.wisely.DashBoardActivity;
 import com.spend.wisely.HourlyRateActivity;
 import com.spend.wisely.R;
 
+import java.io.File;
+
 public class FourFragment extends Fragment implements View.OnClickListener {
-    TextView textView,textView2,textView3,textView4;
-    ImageView imageView,imageView9;
+    TextView textView, textView2, textView3, textView4;
+    ImageView imageView, imageView9;
     Button mButton;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.four_frag, container, false);
@@ -29,8 +33,8 @@ public class FourFragment extends Fragment implements View.OnClickListener {
         textView2 = (TextView) v.findViewById(R.id.textView2);
         textView3 = (TextView) v.findViewById(R.id.textView3);
         textView4 = (TextView) v.findViewById(R.id.textView4);
-        imageView=(ImageView) v.findViewById(R.id.imageView);
-        imageView9=(ImageView) v.findViewById(R.id.imageView9);
+        imageView = (ImageView) v.findViewById(R.id.imageView);
+        imageView9 = (ImageView) v.findViewById(R.id.imageView9);
       /*  imageView.setAnimation(AnimationUtils.loadAnimation(getActivity(),
                 R.anim.slide_out_left));
         textView.setAnimation(AnimationUtils.loadAnimation(getActivity(),
@@ -42,10 +46,10 @@ public class FourFragment extends Fragment implements View.OnClickListener {
         textView4.setAnimation(AnimationUtils.loadAnimation(getActivity(),
                 R.anim.slide_out_left));*/
 
-        Typeface face= Typeface.createFromAsset(getActivity().getAssets(), "ptsans.ttf");
+        Typeface face = Typeface.createFromAsset(getActivity().getAssets(), "ptsans.ttf");
         textView3.setTypeface(face);
         textView4.setTypeface(face);
-        mButton=(Button)v.findViewById(R.id.button);
+        mButton = (Button) v.findViewById(R.id.button);
         mButton.setOnClickListener(this);
         return v;
     }
@@ -70,7 +74,7 @@ public class FourFragment extends Fragment implements View.OnClickListener {
             // Animation animationFadeIn = AnimationUtils.loadAnimation(getActivity(), R.anim.fade_view);
             // iv.startAnimation(animationFadeIn);
             // animationFadeIn.setFillAfter(true);
-          //  Toast.makeText(getActivity(), "State four", Toast.LENGTH_LONG).show();
+            //  Toast.makeText(getActivity(), "State four", Toast.LENGTH_LONG).show();
             imageView.setVisibility(View.VISIBLE);
             //textView.setVisibility(View.VISIBLE);
             //textView2.setVisibility(View.VISIBLE);
@@ -91,12 +95,28 @@ public class FourFragment extends Fragment implements View.OnClickListener {
                     R.anim.slide_out_left));
 
 
+        } else {
         }
-        else {  }
     }
+
     @Override
     public void onClick(View v) {
-        Intent mainIntent = new Intent(getActivity(),HourlyRateActivity.class);
-         startActivity(mainIntent);
+
+        File fdelete = new File("/data/data/com.spend.wisely/shared_prefs/spend_hour.xml");
+        if (fdelete.exists()) {
+
+            Intent in = new Intent(getActivity(), DashBoardActivity.class);
+            startActivity(in);
+
+            /*if (fdelete.delete()) {
+               // System.out.println("file Deleted :" + uri.getPath());
+            } else {
+              //  System.out.println("file not Deleted :" + uri.getPath());
+            }*/
+        } else {
+            Intent mainIntent = new Intent(getActivity(), HourlyRateActivity.class);
+            startActivity(mainIntent);
+        }
+
     }
 }

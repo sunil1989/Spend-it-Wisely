@@ -23,6 +23,7 @@ public class CurrencyAdapter extends ArrayAdapter<Currency> {
     private Activity context;
     ArrayList<Currency> deer;
     TextView name;
+
     public CurrencyAdapter(Activity context, int resource, ArrayList<Currency> deer) {
 
         super(context, resource, deer);
@@ -30,20 +31,56 @@ public class CurrencyAdapter extends ArrayAdapter<Currency> {
         this.deer = deer;
 
     }
-    public int getCount(){
+
+    public int getCount() {
         return deer.size();
     }
 
-    public long getItemId(int position){
+    public long getItemId(int position) {
         return position;
     }
 
-    public Currency getItem(int position){
+    public Currency getItem(int position) {
         return deer.get(position);
     }
 
 
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
 
+        View row = convertView;
+
+        if (row == null) {
+
+            LayoutInflater inflater = context.getLayoutInflater();
+            row = inflater.inflate(R.layout.currency_row, parent, false);
+
+        }
+        TextView label = new TextView(context);
+        //label.setText(deer.get(position).getCurrecnySign());
+        label.setTextSize(30);
+        label.setTextColor(Color.WHITE);
+        label.setGravity(Gravity.CENTER);
+
+        label.setText(Html.fromHtml(deer.get(position).getCurrecnySign() + "<small>" + deer.get(position).getCurrencydropdown() + "</small>"));
+        // label.setText(Html.fromHtml(deer.get(position).getCurrecnySign()));
+
+        if (parent != null && (parent instanceof ListView)) {
+            ListView lv = null;
+            try {
+                lv = (ListView) parent;
+            } catch (Exception e) {
+            }
+            if (lv != null) {
+                // lv.setDivider(drawable);
+                lv.setDividerHeight(0);
+            }
+        }
+
+        return label;
+    }
+
+/*
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView label = new TextView(context);
@@ -53,11 +90,11 @@ public class CurrencyAdapter extends ArrayAdapter<Currency> {
         label.setGravity(Gravity.CENTER);
 
         label.setText(Html.fromHtml(deer.get(position).getCurrecnySign()+ "<small>" + deer.get(position).getCurrencydropdown() + "</small>"));
-       /* TextView label1 = new TextView(context);
+       *//* TextView label1 = new TextView(context);
         label1.setText(deer.get(position).getCurrencydropdown());
         label1.setTextSize(15);
         label1.setTextColor(Color.WHITE);
-        label1.setGravity(Gravity.CENTER);*/
+        label1.setGravity(Gravity.CENTER);*//*
         if(parent!=null&&(parent instanceof ListView)){
             ListView lv=null;
             try{
@@ -74,7 +111,7 @@ public class CurrencyAdapter extends ArrayAdapter<Currency> {
         //name = (TextView) row.findViewById(R.id.spinnerText);
        // name.setText(current.getCurrencyName().toString());
         return label;
-    }
+    }*/
 
     @Override
     public View getDropDownView(int position, View convertView,
@@ -89,12 +126,13 @@ public class CurrencyAdapter extends ArrayAdapter<Currency> {
 
         }
 
-        if(parent!=null&&(parent instanceof ListView)){
-            ListView lv=null;
-            try{
-                lv=(ListView)parent;
-            }catch(Exception e){}
-            if(lv!=null){
+        if (parent != null && (parent instanceof ListView)) {
+            ListView lv = null;
+            try {
+                lv = (ListView) parent;
+            } catch (Exception e) {
+            }
+            if (lv != null) {
                 // lv.setDivider(drawable);
                 lv.setDividerHeight(0);
             }
@@ -102,15 +140,14 @@ public class CurrencyAdapter extends ArrayAdapter<Currency> {
         Currency current = deer.get(position);
 
         //ImageView profile = (ImageView) row.findViewById(R.id.profile);
-       // profile.setBackgroundResource(current.getResourceId());
+        // profile.setBackgroundResource(current.getResourceId());
 
-         name = (TextView) row.findViewById(R.id.spinnerText);
+        name = (TextView) row.findViewById(R.id.spinnerText);
         name.setText(current.getCurrencyName().toString());
 
         return row;
 
     }
-
 
 
 }

@@ -1,9 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rli"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    >
+    android:background="@drawable/purple">
 
 
     <RelativeLayout
@@ -14,14 +14,15 @@
         android:layout_marginTop="30dp"
 
         android:id="@+id/linearLayout2">
+
         <ImageView
             android:src="@drawable/profile_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:layout_alignParentLeft="true"
-            android:id="@+id/imageView3"
-        />
+            android:id="@+id/imageView3" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,6 +35,7 @@
             android:id="@+id/textView4"
             android:padding="15dp"
             android:layout_centerHorizontal="true" />
+
         <ImageView
 
             android:layout_width="wrap_content"
@@ -43,7 +45,7 @@
             android:src="@drawable/settings_icon"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true" />
-        </RelativeLayout>
+    </RelativeLayout>
 
 
     <RelativeLayout
@@ -68,7 +70,6 @@
             android:layout_centerHorizontal="true" />
 
 
-
         <TextView
             android:layout_marginTop="6dp"
             android:id="@+id/textview2"
@@ -80,8 +81,7 @@
             android:textStyle="bold"
             android:gravity="center"
             android:padding="15dp"
-            android:layout_alignParentRight="true"
-            />
+            android:layout_alignParentRight="true" />
 
     </RelativeLayout>
 
@@ -103,13 +103,14 @@
             android:id="@+id/textView6"
             android:textColor="#99f1c2"
             android:layout_centerHorizontal="true" />
+
         <TextView
             android:layout_marginTop="10dp"
             android:layout_below="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="$122"
+            android:text="$ 0"
             android:textSize="50sp"
             android:textStyle="bold"
             android:id="@+id/textView5"
@@ -119,16 +120,16 @@
     </RelativeLayout>
 
 
-
-
-        <it.sephiroth.android.library.widget.HListView
-            android:id="@+id/hListView1"
-            android:layout_width="wrap_content"
-            android:layout_height="100dip"
-            android:background="@null"
-            android:layout_above="@+id/imageView5"
-            android:clickable="false"
-            />
+    <it.sephiroth.android.library.widget.HListView
+        android:id="@+id/hListView1"
+        android:layout_width="wrap_content"
+        android:layout_height="100dip"
+        android:background="@null"
+        android:layout_above="@+id/imageView5"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:listSelector="@android:color/transparent" />
 
     <ImageView
 
