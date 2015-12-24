@@ -69,6 +69,7 @@ public class Add_apps_Activity extends Activity implements AdapterView.OnItemCli
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 String text = mEditSearh.getText().toString().toLowerCase(Locale.getDefault());
                 listadaptor.filter(text);
+                listadaptor.notifyDataSetChanged();
             }
 
             @Override
@@ -91,31 +92,31 @@ public class Add_apps_Activity extends Activity implements AdapterView.OnItemCli
         if (!TextUtils.isEmpty(color_gradient)) {
             if (color_gradient.equals("0")) {
                 rliBackground.setBackgroundResource(R.drawable.purple);
-                mEditSearh.setBackgroundColor(Color.parseColor("#FFC4075D"));
+                // mEditSearh.setBackgroundColor(Color.parseColor("#FFC4075D"));
                 mDone.setBackgroundColor(Color.parseColor("#FFC4075D"));
 
             }
             if (color_gradient.equals("1")) {
                 rliBackground.setBackgroundResource(R.drawable.blue);
-                mEditSearh.setBackgroundColor(Color.parseColor("#0C3FAC"));
+                // mEditSearh.setBackgroundColor(Color.parseColor("#0C3FAC"));
                 mDone.setBackgroundColor(Color.parseColor("#0C3FAC"));
             }
 
             if (color_gradient.equals("2")) {
                 rliBackground.setBackgroundResource(R.drawable.orange);
-                mEditSearh.setBackgroundColor(Color.parseColor("#FFFE4332"));
+                // mEditSearh.setBackgroundColor(Color.parseColor("#FFFE4332"));
                 mDone.setBackgroundColor(Color.parseColor("#FFFE4332"));
             }
 
             if (color_gradient.equals("3")) {
                 rliBackground.setBackgroundResource(R.drawable.blue_green);
-                mEditSearh.setBackgroundColor(Color.parseColor("#FF10C0BC"));
+                // mEditSearh.setBackgroundColor(Color.parseColor("#FF10C0BC"));
                 mDone.setBackgroundColor(Color.parseColor("#FF10C0BC"));
             }
 
             if (color_gradient.equals("4")) {
                 rliBackground.setBackgroundResource(R.drawable.pink);
-                mEditSearh.setBackgroundColor(Color.parseColor("#FFEF2765"));
+                // mEditSearh.setBackgroundColor(Color.parseColor("#FFEF2765"));
                 mDone.setBackgroundColor(Color.parseColor("#FFEF2765"));
             }
         }

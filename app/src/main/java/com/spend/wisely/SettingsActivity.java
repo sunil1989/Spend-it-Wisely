@@ -3,6 +3,7 @@ package com.spend.wisely;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -14,10 +15,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.spend.wisely.com.onbordinganim.Main1Activity;
 import com.spend.wisely.db.AppColorAdapter;
 import com.spend.wisely.db.AppColorSchemeActvity;
+import com.spend.wisely.db.HelpusActivity;
 import com.spend.wisely.db.Settings;
 import com.spend.wisely.db.SettingsAdapter;
 import com.spend.wisely.db.SharedPreferencesManager;
@@ -35,6 +38,7 @@ public class SettingsActivity extends Activity implements View.OnClickListener, 
     RelativeLayout rliBackground;
     SharedPreferencesManager sharedPref = new SharedPreferencesManager();
     Button mUnlockButton;
+    TextView textView4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,11 @@ public class SettingsActivity extends Activity implements View.OnClickListener, 
 
         mUnlockButton = (Button) findViewById(R.id.unlock_full);
 
+        textView4 = (TextView) findViewById(R.id.textView4);
+
+        Typeface face = Typeface.createFromAsset(getAssets(), "ptsans.ttf");
+        textView4.setTypeface(face);
+
     }
 
     public void onResume() {
@@ -89,12 +98,13 @@ public class SettingsActivity extends Activity implements View.OnClickListener, 
 
             if (color_gradient.equals("3")) {
                 rliBackground.setBackgroundResource(R.drawable.blue_green);
-                mUnlockButton.setBackgroundColor(Color.parseColor("#FF10C0BC"));
+                mUnlockButton.setBackgroundColor(Color.parseColor("#009696"));
             }
 
             if (color_gradient.equals("4")) {
                 rliBackground.setBackgroundResource(R.drawable.pink);
-                mUnlockButton.setBackgroundColor(Color.parseColor("#FFEF2765"));
+                mUnlockButton.setBackgroundColor(Color.parseColor("#DB1F5E"));
+
             }
         }
     }
@@ -143,6 +153,10 @@ public class SettingsActivity extends Activity implements View.OnClickListener, 
 
         if (position == 0) {
             Intent in = new Intent(this, WhiteListActivity.class);
+            startActivity(in);
+        }
+        if (position == 1) {
+            Intent in = new Intent(this, HelpusActivity.class);
             startActivity(in);
         }
 

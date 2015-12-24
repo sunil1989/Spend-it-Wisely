@@ -17,5 +17,6 @@
     <string name="title_activity_add_apps_">Add_apps_Activity</string>
     <string name="app_id">991379120927441</string>
     <string name="title_activity_feedback_actvity">FeedbackActvity</string>
+    <string name="title_activity_helpus">HelpusActivity</string>
 
 </resources>

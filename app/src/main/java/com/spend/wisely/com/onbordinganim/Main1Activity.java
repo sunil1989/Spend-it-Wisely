@@ -67,6 +67,8 @@ public class Main1Activity extends FragmentActivity implements ViewPager.OnPageC
             }
         } catch (NoClassDefFoundError e) {
             e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
         }
 
 

@@ -2,6 +2,7 @@ package com.spend.wisely.db;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -89,6 +90,7 @@ public class WhiteListActivity extends Activity implements View.OnClickListener,
         addApp.setOnClickListener(this);
 
         mEditApp = (TextView) findViewById(R.id.edit_apps);
+        mEditApp.setAlpha(0.5f);
         mEditApp.setOnClickListener(this);
         removeapp = (TextView) findViewById(R.id.remove_app);
         titleEdit = (TextView) findViewById(R.id.textView4);
@@ -112,21 +114,26 @@ public class WhiteListActivity extends Activity implements View.OnClickListener,
         if (!TextUtils.isEmpty(color_gradient)) {
             if (color_gradient.equals("0")) {
                 rliBackground.setBackgroundResource(R.drawable.purple);
+                addApp.setBackgroundColor(Color.parseColor("#FFC4075D"));
             }
             if (color_gradient.equals("1")) {
                 rliBackground.setBackgroundResource(R.drawable.blue);
+                addApp.setBackgroundColor(Color.parseColor("#0C3FAC"));
             }
 
             if (color_gradient.equals("2")) {
                 rliBackground.setBackgroundResource(R.drawable.orange);
+                addApp.setBackgroundColor(Color.parseColor("#FFFE4332"));
             }
 
             if (color_gradient.equals("3")) {
                 rliBackground.setBackgroundResource(R.drawable.blue_green);
+                addApp.setBackgroundColor(Color.parseColor("#009696"));
             }
 
             if (color_gradient.equals("4")) {
                 rliBackground.setBackgroundResource(R.drawable.pink);
+                addApp.setBackgroundColor(Color.parseColor("#DB1F5E"));
             }
         }
 

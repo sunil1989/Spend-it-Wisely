@@ -2,6 +2,7 @@ package com.spend.wisely.db;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,8 +60,17 @@ public class SettingsAdapter extends ArrayAdapter<Settings> {
             //TextView appName = (TextView) view.findViewById(R.id.textView9);
             TextView setting_name = (TextView) view.findViewById(R.id.textView9);
             //ImageView iconview = (ImageView) view.findViewById(R.id.icon_img);
-
+            Typeface face = Typeface.createFromAsset(context.getAssets(), "ptsans.ttf");
+            setting_name.setTypeface(face);
             setting_name.setText(applicationInfo.getName());
+
+            TextView textView = (TextView) view.findViewById(R.id.textView1);
+            if (position == 3) {
+                textView.setText("(COMING SOON)");
+            } else {
+                textView.setVisibility(View.GONE);
+            }
+
 
         }
         return view;

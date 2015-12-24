@@ -56,6 +56,22 @@
         android:id="@+id/relativeLayout2">
 
         <TextView
+            android:visibility="gone"
+            android:id="@+id/textview12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="TODAY"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true" />
+
+
+        <TextView
             android:id="@+id/textview1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,13 +92,73 @@
             android:textSize="18sp"
             android:layout_marginTop="2.5dp"
             android:text="5 - 11 OCT"
-            android:textColor="#99f1c2"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:gravity="center_vertical"
             android:padding="15dp"
             android:layout_alignParentRight="true" />
 
+        <TextView
+            android:visibility="gone"
+            android:layout_marginTop="6dp"
+            android:id="@+id/textview23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="5 - 11 OCT"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_alignParentRight="true" />
+
+
     </RelativeLayout>
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_below="@+id/relativeLayout2"
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:id="@+id/previous"
+            android:layout_width="40dip"
+            android:layout_height="30dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/arrow_left" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="title"
+            android:textSize="18dip"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/next"
+            android:layout_width="40dip"
+            android:layout_height="30dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/arrow_right" />
+        </RelativeLayout>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -94,13 +170,14 @@
         android:layout_marginTop="47dp">
 
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="YOU LOST"
             android:textSize="25sp"
             android:id="@+id/textView6"
-            android:textColor="#99f1c2"
+            android:textColor="@color/white"
             android:layout_centerHorizontal="true" />
 
         <TextView
@@ -118,6 +195,39 @@
             android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
+    <TextView
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+
+        android:id="@+id/unlock_full"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:text="UNLOCK FULL VERSION" />
+
+    <it.sephiroth.android.library.widget.HListView
+        android:visibility="gone"
+        android:layout_below="@+id/relativeLayout"
+        android:id="@+id/hListView2"
+        android:layout_width="wrap_content"
+        android:layout_height="100dip"
+        android:background="@null"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:listSelector="@android:color/transparent" />
+
+    <GridView
+        android:visibility="gone"
+        android:numColumns="6"
+        android:layout_below="@+id/relativeLayout"
+        android:id="@+id/gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"></GridView>
 
     <it.sephiroth.android.library.widget.HListView
         android:id="@+id/hListView1"
